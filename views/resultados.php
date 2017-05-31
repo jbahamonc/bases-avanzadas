@@ -2,7 +2,7 @@
 
 <section class="content-header no-index">
     <div class="info-box">
-    	<span class="info-box-icon" style="background-color: white;"><i class="fa fa-address-book-o"></i></span>
+    	<span class="info-box-icon" style="background-color: white;"><i class="fa fa-file-text-o"></i></span>
     	<div class="info-box-content">
           	<h2 class="info-box-text"><b>Panel de Gestion de Resultados</b></h2>
           	<span class="info-box-number" style="font-weight: normal;">A continuacion podra gestionar todos los resultados que se han registrado en el sistema</span>

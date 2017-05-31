@@ -46,16 +46,16 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li>
-                <a href=""><i class="fa fa-home"></i> <span>Deportes</span></a>
+                <a href=""><i class="fa fa-futbol-o"></i> <span>Deportes</span></a>
             </li>
             <li>
-                <a href=""><i class="fa fa-home"></i> <span>Deportista</span></a>
+                <a href=""><i class="fa fa-male"></i> <span>Deportista</span></a>
             </li>
             <li>
-                <a href="?url=Competencia"><i class="fa fa-home"></i> <span>Competencia</span></a>
+                <a href="?url=Competencia"><i class="fa fa-group"></i> <span>Competencia</span></a>
             </li>
             <li>
-                <a href="?url=Resultado"><i class="fa fa-home"></i> <span>Resultados</span></a>
+                <a href="?url=Resultado"><i class="fa fa-file-text-o"></i> <span>Resultados</span></a>
             </li>    
         </ul>
         <!-- /.sidebar-menu -->

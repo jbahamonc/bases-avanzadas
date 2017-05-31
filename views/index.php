@@ -5,10 +5,9 @@
     <img src="resource/img/logo_sistemas_top.png">
     <h1 class="text-center">Aplicacion para la gestión de competencias</h1>
     <h3>Integrantes</h3>
-    <h3>Integrantes 1</h3>
-    <h3>Integrantes 2</h3>
-    <h3>Integrantes 3</h3>
-    <h3>Integrantes 4</h3>
+    <h4>Silvia Hernandez Carrero cod:</h4>
+    <h4>Eduard Serrano cod:</h4>
+    <h4>Jefferson Bahamon Cuevas cod: 1150560</h4>
 </section>
 
 <?php include 'footer.php'; ?>
