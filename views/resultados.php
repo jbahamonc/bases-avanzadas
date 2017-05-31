@@ -56,26 +56,40 @@
     <div class="modal-content">
       	<div class="modal-header">
         	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        	<h4 class="modal-title" id="myModalLabel">Formulario para Registro de Deportes</h4>
+        	<h4 class="modal-title" id="myModalLabel">Formulario para Registro de Resultados</h4>
       	</div>
       		<form action="">
-	      		<div class="modal-body">
-	      			<div class="form-group">
-	                  	<label for="titulo">Codigo del Deporte</label>
-	                  	<input type="text" class="form-control" name="title_doc" id="titulo" placeholder="Codigo">
+      			<div class="modal-body">
+					<div class="form-group">
+	                  	<label for="titulo">Deportista</label>
+	                  	<select name="" id="" class="form-control">
+	                  		<option value="">Seleccione</option>
+	                  		<option value="">Codigo 1</option>
+	                  		<option value="">Codigo 2</option>
+	                  		<option value="">Codigo 3</option>
+	                  	</select>
 	                </div>
 	                <div class="form-group">
-	                  	<label for="titulo">Nombre del Deporte</label>
-	                  	<input type="text" class="form-control" name="title_doc" id="titulo" placeholder="Nombre">
+	                  	<label for="titulo">Competencia</label>
+	                  	<select name="" id="" class="form-control">
+	                  		<option value="">Selecciones</option>
+	                  		<option value="">Competencia 1</option>
+	                  		<option value="">Competencia 2</option>
+	                  		<option value="">Competencia 3</option>
+	                  	</select>
 	                </div>
-	      		</div>      		      	
-                <div class="modal-footer">
+	                <div class="form-group">
+	                  	<label for="titulo">Posicion del deportista</label>
+	                  	<input type="number" class="form-control" name="title_doc" id="titulo" placeholder="Posicion">
+	                </div>
+	            </div>
+	            <div class="modal-footer">
 			    	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 			    	<button type="button" class="btn btn-primary">Guardar</button>
 			  	</div>
-      		</form>
-    </div>
-  </div>
+			</form>
+    	</div>
+  	</div>
 </div>
 <!-- BTN floating modal -->
 <button class="btn btn-danger btn-fixed" data-toggle="modal" data-target="#myModalArchivos"><i class="fa fa-upload"></i></button>

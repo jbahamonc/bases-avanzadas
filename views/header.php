@@ -46,10 +46,10 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li>
-                <a href="deportes.php"><i class="fa fa-home"></i> <span>Deportes</span></a>
+                <a href=""><i class="fa fa-home"></i> <span>Deportes</span></a>
             </li>
             <li>
-                <a href="deportista.php"><i class="fa fa-home"></i> <span>Deportista</span></a>
+                <a href=""><i class="fa fa-home"></i> <span>Deportista</span></a>
             </li>
             <li>
                 <a href="?url=Competencia"><i class="fa fa-home"></i> <span>Competencia</span></a>
