@@ -28,20 +28,37 @@
 		            </tr>
 		        </thead>
 		        <tbody>
-		        	<tr>
-		        		<td>Codigo</td>
-		                <td>Nombre</td>
-		                <td>Fecha Incorporación</td>
-		                <td>Numero de Medallas</td>
-	                	<td style="vertical-align: middle;text-align: center;">
-		                	<button class="btn btn-sm btn-danger btn-delete-doc" title="Eliminar">
-		                		<i class="fa fa-trash"></i>
-		                	</button>
-		                	<button data-toggle="modal" data-target="#myModalArchivos" class="btn btn-sm btn-danger btn-delete-doc" title="Actualizar">
-		                		<i class="fa fa-refresh"></i>
-		                	</button>
-		                </td>
-		        	</tr>
+		        	<?php
+			       	 if ($deport ->next()) {
+			       	 
+		        		foreach($deport as $d) {	
+		        			
+				        		print('
+						        	<tr>
+						               <td>'.$d['codDeporte'].'</td>
+						        		<td>'.$d['nombre'].'</td>
+						                <td>'.$d['fechaIncorporacion'].'</td>
+						                <td>'.$d['numeroMedallas'].'</td>
+					                	<td style="vertical-align: middle;text-align: center;">
+						                	<button class="btn btn-sm btn-danger btn-delete-doc" id="delete-res" title="Eliminar" data-id="'.$d['codDeporte'].'">
+						                		<i class="fa fa-trash"></i>
+						                	</button>
+						                	<button data-toggle="modal" data-whatever="actualizar" data-target="#myModalArchivos" class="btn btn-sm btn-danger btn-delete-doc" title="Actualizar">
+						                		<i class="fa fa-refresh"></i>
+						                	</button>
+						                </td>
+						        	</tr>'
+						        );
+			        		}
+
+				        } else {
+				        	print('
+					        	<tr class="text-center">
+					        		<td colspan="5"><p>No hay deportes registrados</p></td>
+					        	</tr>
+					        ');
+				         }
+				    ?>
 		        </tbody>
 		    </table>  
 	    </div>
@@ -56,26 +73,35 @@
         	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         	<h4 class="modal-title" id="myModalLabel">Formulario para Registro de Deportes</h4>
       	</div>
-      		<form action="">
+      		<form id="form-save-deporte">
+      			<input type="hidden" id="type-action"/>
 	      		<div class="modal-body">
 	      			<div class="form-group">
 	                  	<label for="titulo">Codigo del Deporte</label>
-	                  	<input type="text" class="form-control" name="title_doc" id="titulo" placeholder="Codigo">
+	                  	<input type="text" class="form-control" name="codDeporte" id="codDeporte" placeholder="Codigo">
 	                </div>
 	                <div class="form-group">
 	                  	<label for="titulo">Nombre del Deporte</label>
-	                  	<input type="text" class="form-control" name="title_doc" id="titulo" placeholder="Nombre">
+	                  	<input type="text" class="form-control" name="nombre" id="nombreDeporte" placeholder="Nombre">
+	                </div>
+	                 <div class="form-group">
+	                  	<label for="titulo">Fecha de Incorporacion</label>
+	                  	<input type="date" class="form-control" name="fechaIncorporacion" id="fechaIncorporacion" placeholder="Fecha">
+	                </div>
+	                <div class="form-group">
+	                  	<label for="titulo">Numero de Medallas</label>
+	                  	<input type="text" class="form-control" name="numeroMedallas" id="numeroMedallas" placeholder="Numero de medallas">
 	                </div>
 	      		</div>      		      	
                 <div class="modal-footer">
 			    	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-			    	<button type="button" class="btn btn-primary">Guardar</button>
+			    	<button type="button" id="btn-save-deporte"  class="btn btn-primary">Guardar</button>
 			  	</div>
       		</form>
     </div>
   </div>
 </div>
 <!-- BTN floating modal -->
-<button class="btn btn-danger btn-fixed" data-toggle="modal" data-target="#myModalArchivos"><i class="fa fa-upload"></i></button>
+<button class="btn btn-danger btn-fixed" data-whatever="registrar" data-toggle="modal" data-target="#myModalArchivos"><i class="fa fa-upload"></i></button>
 
 <?php include 'footer.php'; ?>

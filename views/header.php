@@ -46,7 +46,7 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li>
-                <a href=""><i class="fa fa-futbol-o"></i> <span>Deportes</span></a>
+                <a href="?url=deporte"><i class="fa fa-futbol-o"></i> <span>Deportes</span></a>
             </li>
             <li>
                 <a href=""><i class="fa fa-male"></i> <span>Deportista</span></a>
