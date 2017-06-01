@@ -42,6 +42,18 @@
 			}
 		}
 
+		public static function delete($id) {
+			try {
+				$conn = new MongoClient();
+				$db = $conn->competicion;
+				$coll = $db->selectCollection('competencia');
+				$coll->remove(array('_id' => new MongoId($id)));
+				return ['ok' => true];
+			}catch(Exception $e) {
+				return ['ok' => false, 'error' => $e->getMessage()];
+			}
+		}
+
 		public static function update($deporte, $descripcion, $integrantes) {
 			try {
 				$conn = new MongoClient();
@@ -71,6 +83,7 @@
 				return ['ok' => false, 'error' => $e->getMessage()];
 			}
 		}
-	}
+
+	}	
 
 ?>

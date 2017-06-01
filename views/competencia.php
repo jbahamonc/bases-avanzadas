@@ -29,7 +29,7 @@
 		        </thead>
 		        <tbody>
 		        	<?php 
-		        		var_dump($com['deportes']);
+		        		//var_dump($com['deportes']);
 		        	if ($com['competencias']->next()) {
 		        		foreach($com['competencias'] as $dep) {
 			        		print('
@@ -39,7 +39,7 @@
 					                <td>'.$dep['descripcion'].'</td>
 					                <td>'.$dep['numintegrantes'].'</td>
 				                	<td style="vertical-align: middle;text-align: center;">
-					                	<button class="btn btn-sm btn-danger btn-delete-doc" title="Eliminar" data-id="'.$dep['_id'].'">
+					                	<button class="btn btn-sm btn-danger btn-delete-doc" title="Eliminar" data-id="'.$dep['_id'].'" id="delete-com">
 					                		<i class="fa fa-trash"></i>
 					                	</button>
 					                	<button data-toggle="modal" data-whatever="actualizar" data-target="#myModalArchivos" class="btn btn-sm btn-danger btn-delete-doc" title="Actualizar">

@@ -21,7 +21,6 @@
 		        <thead>
 		            <tr>
 		                <th>Codigo Deportista</th>
-		                <th>Nombre Deportista</th>
 		                <th>Posicion del Deportista</th>
 		                <th>Codigo Competencia</th>
 		                <th>Nombre de Competencia</th>
@@ -29,21 +28,30 @@
 		            </tr>
 		        </thead>
 		        <tbody>
-		        	<tr>
-		        		<td>Codigo Deportista</td>
-		                <td>Nombre Deportista</td>
-		                <td>Posicion del Deportista</td>
-		                <td>Codigo Competencia</td>
-		                <td>Nombre de Competencia</td>
-	                	<td style="vertical-align: middle;text-align: center;">
-		                	<button class="btn btn-sm btn-danger btn-delete-doc" title="Eliminar">
-		                		<i class="fa fa-trash"></i>
-		                	</button>
-		                	<button data-toggle="modal" data-target="#myModalArchivos" class="btn btn-sm btn-danger btn-delete-doc" title="Actualizar">
-		                		<i class="fa fa-refresh"></i>
-		                	</button>
-		                </td>
-		        	</tr>
+		        	<?php 
+			        	foreach ($comp['competencias'] as $val) {
+		        			if(!empty($val["resultado"])) {
+			        			print('
+					        	<tr>
+					        		<td>'.$val["resultado"][0]['codDeportista'].'</td>
+					                <td>'.$val["resultado"][0]['posicion'].'</td>
+					                <td>'.$val['_id'].'</td>
+					                <td>'.$val['descripcion'].'</td>
+				                	<td style="vertical-align: middle;text-align: center;">
+					                	<button id="delete-res" data-id='.$val['_id'].' class="btn btn-sm btn-danger btn-delete-doc" title="Eliminar">
+					                		<i class="fa fa-trash"></i>
+					                	</button>
+					                	<button data-whatever="actualizar" data-toggle="modal" data-target="#modal-resultados" class="btn btn-sm btn-danger btn-delete-doc" title="Actualizar">
+					                		<i class="fa fa-refresh"></i>
+					                	</button>
+					                </td>
+					        	</tr>');
+						    }else {
+						    	break;
+						    	echo "string";
+						    }
+					    }
+			        ?>
 		        </tbody>
 		    </table>  
 	    </div>
@@ -51,47 +59,50 @@
 </section>
 <!-- /.content -->
 <!-- Modal cargar archivos -->
-<div class="modal fade modal-danger" id="myModalArchivos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade modal-danger" id="modal-resultados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       	<div class="modal-header">
         	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         	<h4 class="modal-title" id="myModalLabel">Formulario para Registro de Resultados</h4>
       	</div>
-      		<form action="">
+      		<form id="form-resultados">
+      		<input type="hidden" value="" id="type-action">
       			<div class="modal-body">
 					<div class="form-group">
 	                  	<label for="titulo">Deportista</label>
-	                  	<select name="" id="" class="form-control">
+	                  	<select name="deportista-res" id="deportista-res" class="form-control">
 	                  		<option value="">Seleccione</option>
-	                  		<option value="">Codigo 1</option>
-	                  		<option value="">Codigo 2</option>
-	                  		<option value="">Codigo 3</option>
+	                  		<option value="1234">Codigo 1</option>
 	                  	</select>
 	                </div>
 	                <div class="form-group">
 	                  	<label for="titulo">Competencia</label>
-	                  	<select name="" id="" class="form-control">
+	                  	<select name="competencia-res" id="competencia-res" class="form-control">
 	                  		<option value="">Selecciones</option>
-	                  		<option value="">Competencia 1</option>
-	                  		<option value="">Competencia 2</option>
-	                  		<option value="">Competencia 3</option>
+	                  		<?php  
+	                  			foreach ($comp['competencias'] as $val) {
+	                  				print('
+										<option value="'.$val['descripcion'].'">'.$val['descripcion'].'</option>');
+	                  			}
+
+	                  		?>
 	                  	</select>
 	                </div>
 	                <div class="form-group">
 	                  	<label for="titulo">Posicion del deportista</label>
-	                  	<input type="number" class="form-control" name="title_doc" id="titulo" placeholder="Posicion">
+	                  	<input type="number" class="form-control" name="posicion-res" id="posicion-res" placeholder="Posicion">
 	                </div>
 	            </div>
 	            <div class="modal-footer">
 			    	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-			    	<button type="button" class="btn btn-primary">Guardar</button>
+			    	<button type="button" class="btn btn-primary" id="btn-save-res">Guardar</button>
 			  	</div>
 			</form>
     	</div>
   	</div>
 </div>
 <!-- BTN floating modal -->
-<button class="btn btn-danger btn-fixed" data-toggle="modal" data-target="#myModalArchivos"><i class="fa fa-upload"></i></button>
+<button class="btn btn-danger btn-fixed" data-whatever="registrar" data-toggle="modal" data-target="#modal-resultados"><i class="fa fa-upload"></i></button>
 
 <?php include 'footer.php'; ?>
